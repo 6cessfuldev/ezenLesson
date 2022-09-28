@@ -1,4 +1,4 @@
-package studentManager;
+package studentManager2;
 
 import java.util.Scanner;
 
