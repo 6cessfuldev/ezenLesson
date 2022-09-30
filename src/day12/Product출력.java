@@ -15,7 +15,9 @@ public class Product출력 {
 		 * 4. 주문 내역 (+ 총 금액)
 		 * 5. 프로그램 종료
 		 */
+			
 
+		
 		Scanner scan = new Scanner(System.in);
 		Salemanager pm = new Salemanager();
 		

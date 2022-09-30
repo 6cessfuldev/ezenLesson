@@ -30,13 +30,17 @@ public class MapEx02 {
 		}
 		
 		System.out.println("----단어장 목록----");
+		
 		Set<Map.Entry<String, String>> set = map.entrySet();
+		
 		Iterator<Map.Entry<String, String>> it = set.iterator();
+		
 		
 		while(it.hasNext()) {
 			Map.Entry<String, String> entry = (Map.Entry<String, String>)it.next();
 			System.out.println(entry.getKey()+ ":"+entry.getValue());
 		}
 				
+
 	}
 }

@@ -59,6 +59,7 @@ public class 학생성적관리프로그램 {
 			System.out.println("이미 있는 과목입니다.");
 			return;
 		} else {
+			System.out.println("점수를 입력해주세요.");
 			int score = scan.nextInt();
 			map.put(name, score);
 			System.out.println("추가되었습니다.");
@@ -71,9 +72,27 @@ public class 학생성적관리프로그램 {
 			System.out.println("추가된 성적이 없습니다.");
 			return;
 		}
+	
 		Set<String> set = map.keySet();
+		int sum = 0;
 		for (String key : set) {
 			System.out.println(key+" : "+map.get(key));
+			sum += map.get(key);
+		}
+		double avg = (double)sum/map.size();
+		System.out.println("성적 총 합계 : " + sum);
+		System.out.println("성적 평균 : " + avg);
+		
+		if(avg >= 90) {
+			System.out.println("1등급입니다.");
+		} else if(avg >= 80) {
+			System.out.println("2등급입니다.");
+		} else if(avg >= 70) {
+			System.out.println("3등급입니다.");
+		} else if(avg >= 60) {
+			System.out.println("4등급입니다.");
+		} else {
+			System.out.println("공부합시다..");
 		}
 	}
 
