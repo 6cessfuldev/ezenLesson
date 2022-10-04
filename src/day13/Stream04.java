@@ -53,8 +53,6 @@ public class Stream04 {
 				System.out.println(customer.getName());
 			}	
 		}
-		
-		boolean flag = list.contains(custom3);
 	
 		/*------------------- stream을 사용 --------------------*/
 		System.out.println("=================Stream 사용=================");
