@@ -46,5 +46,4 @@ public class Word implements Comparable<Word>{
 		
 		return this.word.compareTo(o.getWord());
 	}
-	
 }

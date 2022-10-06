@@ -1,5 +1,6 @@
 package wordBook;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +8,8 @@ import java.util.Scanner;
  * 2. 단어 검색
  * 3. 단어 수정
  * 4. 단어 출력
- * 5. 프로그램 종료
+ * 5. 단어 파일로 저장
+ * 6. 프로그램 종료
  */
 
 public class WordBookManager {
@@ -25,7 +27,8 @@ public class WordBookManager {
 			case 2 : searchWord(); break;
 			case 3 : modifyWord(); break;
 			case 4 : printWord(); break;
-			case 5 : System.out.println("종료합니다."); break;
+			case 5 : saveFile(); break;
+			case 6 : System.out.println("종료합니다."); break;
 				default : System.out.println("입력이 잘못되었습니다.");
 			}
 		} while(choice != 5);
@@ -38,7 +41,8 @@ public class WordBookManager {
 		System.out.println("2. 단어 검색");
 		System.out.println("3. 단어 수정");
 		System.out.println("4. 단어 출력");
-		System.out.println("5.  종료   ");
+		System.out.println("5. 파일 저장");
+		System.out.println("6.  종료   ");
 	}
 	
 	public void addWord() {
@@ -97,6 +101,22 @@ public class WordBookManager {
 	public void printWord() {
 		for (Word word : list) {
 			System.out.println(word.getWord()+ ":"+word.getMean());
+		}
+	}
+	
+	public void saveFile() {
+		
+		try {
+			FileOutputStream output = new FileOutputStream("word.txt");
+			for (Word tmp : list) {
+				String data = tmp.getWord() + " : " + tmp.getMean()+"\n"; 
+				output.write(data.getBytes()); // 파일에 쓰기	
+			}
+			System.out.println("파일 저장 완료!");
+			output.close();
+		} catch (Exception e) {
+			System.out.println("파일 저장 실패!");
+			e.printStackTrace();
 		}
 	}
 }
