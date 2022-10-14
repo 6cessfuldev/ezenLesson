@@ -1,4 +1,4 @@
-package day06;
+package card3;
 
 /* Card 클래스
  * -숫자 : 1~10, J, Q, K
